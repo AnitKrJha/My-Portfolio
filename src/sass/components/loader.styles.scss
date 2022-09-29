@@ -1,0 +1,20 @@
+.load{
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-content: center;
+    background-color: red;
+}
+
+.App{
+    transition: all 0.5s ease;
+}
+    
+.hide{
+    height: 0px;
+    font-size: 0px;
+    transform: translateY(-40%);
+    opacity: 0;
+    overflow: hidden;
+    transition: transform 1s ease-in ,height 1s ease ,opacity 1s ease-in-out ,font-size 1s ease-out;
+}

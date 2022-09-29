@@ -1,0 +1,14 @@
+@import '../abstract/variables';
+
+.heading-accent{
+    color: $accent;
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+.heading-accent-left{
+    text-align: left;
+}
+.heading-accent-center{
+    text-align: center;
+}
