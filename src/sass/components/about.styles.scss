@@ -1,0 +1,7 @@
+@import "../abstract/variables";
+
+.tech-stack li::before {
+  content: attr(data-icon);
+  color: $accent;
+  font-size: 1.25em;
+}

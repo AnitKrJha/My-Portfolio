@@ -1,1 +1,22 @@
-@import '../abstract/variables';
+@import "../abstract/variables";
+
+@font-face {
+    font-family: 'Rocher';
+    src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+  }
+
+.styled-name {
+  font-family: "Rocher", cursive;
+  font-palette: --Grays;
+  display: inline-block;
+  font-size: 120px;
+  letter-spacing: 10px;
+  transform: rotateZ(1deg);
+}
+
+@font-palette-values --Grays {
+  font-family: 'Rocher';
+  base-palette: 6;
+  override-colors:
+    0 $accent,
+}

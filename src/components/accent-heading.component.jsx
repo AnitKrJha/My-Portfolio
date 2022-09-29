@@ -5,7 +5,7 @@ const AccentHeading = ({ children, align }) => {
     <h2
       className={`heading-accent ${
         align === "left" ? "heading-accent-left" : "heading-accent-center"
-      } `}
+      }  font-['Fira_Mono']`}
     >
       {children}
     </h2>
