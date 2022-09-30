@@ -21,7 +21,7 @@ module.exports = {
           700: '#0e2342',
           800: '#0a192f',
           900: '#03080f',
-          DEFAULT:'#0a192f',
+          DEFAULT:'#1e043d',
         },
         'accent':{
           100: '#64ffda',
@@ -33,7 +33,7 @@ module.exports = {
           700: '#1c4d41',
           800: '#113029',
           900: '##091a16',
-          DEFAULT:'#64ffda'
+          DEFAULT:'#d9eb3b'
         }
       }
     },

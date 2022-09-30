@@ -1,0 +1,31 @@
+@import '../abstract/variables';
+
+button.active-btn{
+    padding-inline: 12px;
+    box-shadow: -5px 0px 0px  $accent;
+    transform: translateY(-2px);
+    font-weight: 500;
+    background-color: rgba(217, 235, 59,0.1);
+}
+.tab-content{
+    transition: all 0.7s ease;
+}
+
+.work-point{
+    position: relative;
+    padding-left: 20px;
+    line-height: 18px;
+    padding-block: 10px;
+}
+
+.work-points{
+    margin-top: 10px;
+}
+
+.work-point::before {
+    content: attr(data-icon);
+    position: absolute;
+    left: 0px;
+    color: $accent;
+    font-size: 1.25em;
+  }

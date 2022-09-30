@@ -2,11 +2,11 @@ import LineHeading from "../components/line-heading.component";
 import "../sass/components/about.styles.scss";
 const About = () => {
   return (
-    <section className="about-me-container min-h-[80vh] my-16">
-      <div className="inner-container lg:w-[65%] md:w-[75%] w-[90%] px-20 md:px-0 m-auto  flex flex-col md:flex-row gap-20  items-center md:items-stretch md:justify-around">
+    <section className="about-me-container min-h-[75vh] my-16">
+      <div className="inner-container lg:w-[65%] md:w-[75%] w-[90%] px-0 md:px-0 m-auto  flex flex-col md:flex-row md:gap-16 gap-10  items-center md:items-stretch md:justify-around">
         <div className="about-left max-w-lg  ">
           <LineHeading index={"01"}>
-            <span className="min-w-max text-3xl lg:text-4xl">About Me</span>
+            <span className="min-w-max text-2xl lg:text-3xl">About Me</span>
           </LineHeading>
           <p className="about-content  lg:text-[17px] text-content-300 mb-2 mt-10">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
@@ -28,7 +28,7 @@ const About = () => {
           </p>
           <p className="text-content-300">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione, tempora!</p>
 
-            <div className="tech-stack grid grid-rows-3 grid-cols-2 font-['Fira Mono'] gap-x-4 text-content-200 mt-4">
+            <div className="tech-stack grid grid-rows-3 grid-cols-2 font-['Fira_Mono'] gap-x-4 text-content-200 mt-4">
                 <li data-icon="▹" >Node.js</li>
                 <li data-icon="▹" >Jekyll</li>
                 <li data-icon="▹" >Hugo</li>
