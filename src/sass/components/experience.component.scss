@@ -1,9 +1,9 @@
 @import '../abstract/variables';
 
 button.active-btn{
-    padding-inline: 12px;
-    box-shadow: -5px 0px 0px  $accent;
-    transform: translateY(-2px);
+    padding-inline: 6px;
+    border-left: 4px solid  $accent;
+    // transform: translateY(-2px);
     font-weight: 500;
     background-color: rgba(217, 235, 59,0.1);
 }

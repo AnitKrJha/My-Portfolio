@@ -36,35 +36,35 @@ const Exprerience = () => {
           <ul className="tab-list w-fit flex flex-col gap-2 md:justify-start">
             <button
               data-index="0"
-              className="w-full flex py-1 px-1 md:px-3 items-center   active-btn tab-btn"
+              className="w-[85px] flex py-1 px-1 md:px-3 items-center   active-btn tab-btn"
               onClick={handleOnClick}
             >
               Amazon
             </button>
             <button
               data-index="1"
-              className="w-fit flex py-1 px-1 md:px-3 items-center    tab-btn"
+              className="w-[85px] flex py-1 px-1 md:px-3 items-center    tab-btn"
               onClick={handleOnClick}
             >
               Google
             </button>
             <button
               data-index="2"
-              className="w-fit flex py-1 px-1 md:px-3 items-center    tab-btn"
+              className="w-[85px] flex py-1 px-1 md:px-3 items-center    tab-btn"
               onClick={handleOnClick}
             >
-              Microsot
+              Microsoft
             </button>
             <button
               data-index="3"
-              className="w-fit flex py-1 px-1 md:px-3 items-center    tab-btn"
+              className="w-[85px] flex py-1 px-1 md:px-3 items-center    tab-btn"
               onClick={handleOnClick}
             >
               xLance
             </button>
             <button
               data-index="4"
-              className="w-fit flex py-1 px-1 md:px-3 items-center    tab-btn"
+              className="w-[85px] flex py-1 px-1 md:px-3 items-center    tab-btn"
               onClick={handleOnClick}
             >
               NSUT
@@ -76,7 +76,7 @@ const Exprerience = () => {
               data-index="0"
             >
               <h1 className="role font-bold text-lg md:text-xl ">
-                Software Engineer <span className="text-accent">@Amazon</span>
+                Software Engineer <span className="text-accent text-base sm:text-lg">@Amazon</span>
               </h1>
               <p className="tenure font-['Fira_Sans'] text-sm py-1">
                 2 October - 3 October
@@ -100,8 +100,8 @@ const Exprerience = () => {
               className="h-0 overflow-hidden tab-content "
               data-index="1"
             >
-             <h1 className="role font-bold text-lg md:text-xl ">
-                Software Engineer <span className="text-accent">@Amazon</span>
+             <h1 className="role font-bold text-lg md:text-xl">
+                Software Engineer <span className="text-accent text-base sm:text-lg">@Google</span>
               </h1>
               <p className="tenure font-['Fira_Sans'] text-sm py-1">
                 2 October - 3 October
@@ -126,7 +126,7 @@ const Exprerience = () => {
               data-index="2"
             >
              <h1 className="role font-bold text-lg md:text-xl ">
-                Software Engineer <span className="text-accent">@Amazon</span>
+                Data Analyst <span className="text-accent text-base sm:text-lg">@Microsoft</span>
               </h1>
               <p className="tenure font-['Fira_Sans'] text-sm py-1">
                 2 October - 3 October
@@ -151,7 +151,7 @@ const Exprerience = () => {
               data-index="3"
             >
              <h1 className="role font-bold text-lg md:text-xl ">
-                Software Engineer <span className="text-accent">@Amazon</span>
+                Intern <span className="text-accent text-base sm:text-lg">@xLance</span>
               </h1>
               <p className="tenure font-['Fira_Sans'] text-sm py-1">
                 2 October - 3 October
@@ -176,7 +176,7 @@ const Exprerience = () => {
               data-index="4"
             >
              <h1 className="role font-bold text-lg md:text-xl ">
-                Software Engineer <span className="text-accent">@Amazon</span>
+                Instructor <span className="text-accent text-base sm:text-lg">@NSUT</span>
               </h1>
               <p className="tenure font-['Fira_Sans'] text-sm py-1">
                 2 October - 3 October
