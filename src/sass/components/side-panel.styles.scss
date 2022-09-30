@@ -1,0 +1,19 @@
+@import '../abstract/variables';
+
+.side-panel{
+    width: max(300px,60%);
+	height: 100vh;
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	display: flex;
+    transition: transform 1s ease;
+	flex-direction: column;
+    box-shadow: 0 0 1000px 0.5px ;
+    z-index: 1000;
+}
+
+.side-panel.side-panel-hide{
+    transform: translateX(1000px);
+    // display: none;
+}

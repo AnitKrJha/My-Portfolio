@@ -4,9 +4,25 @@ button.active-btn{
     padding-inline: 6px;
     border-left: 4px solid  $accent;
     // transform: translateY(-2px);
+    transition: all 0.3s ease;
     font-weight: 500;
     background-color: rgba(217, 235, 59,0.1);
+    box-shadow: 0.5px 0.5px 2px $accent;
+    color:$accent
 }
+
+.tab-btn:hover{
+    background-color: rgba(217, 235, 59,0.1);
+    cursor: pointer;
+}
+
+.tab-btn{
+    font-weight: bolder;
+    
+}
+
+
+
 .tab-content{
     transition: all 0.7s ease;
 }
@@ -14,7 +30,7 @@ button.active-btn{
 .work-point{
     position: relative;
     padding-left: 20px;
-    line-height: 18px;
+    // line-height: 18px;
     padding-block: 10px;
 }
 
