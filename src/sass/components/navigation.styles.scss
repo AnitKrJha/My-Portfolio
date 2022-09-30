@@ -1,35 +1,68 @@
 @import "../abstract/variables";
 
 .hamburger-menu::before {
-    content: "";
-    position: absolute;
-    top:-10px;
-    right: 0;
-    background-color: $accent;
-    height: 3px;
-    width: 30px;
-    border-radius: 3px;
-  }
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 0;
+  background-color: $accent;
+  height: 3px;
+  width: 30px;
+  border-radius: 3px;
+}
 
 .hamburger-menu {
   background-color: $accent;
   position: relative;
   height: 3px;
   width: 25px;
-    border-radius: 3px;
+  border-radius: 3px;
 }
 .hamburger-menu::after {
   content: "";
   position: absolute;
-  top:10px;
+  top: 10px;
   right: 0;
   background-color: $accent;
   height: 3px;
   width: 20px;
-    border-radius: 3px;
+  border-radius: 3px;
 }
 
-.nav-link:hover{
-    transition: 0.3s all ease-out;
+.nav-link:hover {
+  transition: 0.3s all ease-out;
 }
 
+.hamburger-menu-open::before {
+  content: "";
+  position: absolute;
+  top: -0px;
+  right: 0;
+  background-color: $accent;
+  height: 3px;
+  width: 30px;
+  border-radius: 3px;
+  transform: rotateZ(45deg) translateY(0px);
+  visibility: visible;
+}
+
+.hamburger-menu-open {
+  background-color: $accent;
+  position: relative;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  visibility:hidden;
+}
+.hamburger-menu-open::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  right: 0;
+  background-color: $accent;
+  height: 3px;
+  width: 30px;
+  border-radius: 3px;
+  visibility: visible;
+  transform: rotateZ(-45deg) translateY(0px);
+}

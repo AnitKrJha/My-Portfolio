@@ -13,7 +13,7 @@ const Navigation = () => {
       <ul className="nav-links  gap-4 text-base items-center hidden sm:flex">
         <a href="#home">
           <li className="nav-link text-content-200 text-sm hover:text-accent-100 hover:cursor-pointer font-['Fira_Mono']">
-          <span className="text-accent text-md mx-1">01. </span>Home
+            <span className="text-accent text-md mx-1">01. </span>Home
           </li>
         </a>
         <a href="#about">
@@ -43,6 +43,8 @@ const Navigation = () => {
           document
             .querySelector(".side-panel")
             .classList.toggle("side-panel-hide");
+
+          e.target.classList.toggle("hamburger-menu-open");
         }}
       ></div>
     </div>
