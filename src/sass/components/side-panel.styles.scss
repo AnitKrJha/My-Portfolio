@@ -9,11 +9,11 @@
 	display: flex;
     transition: transform 1s ease;
 	flex-direction: column;
-    box-shadow: 0 0 1000px 0.5px ;
+    // box-shadow: 0 0 100px 0.5px  rgba($color: $accent, $alpha: 0.1);
     z-index: 1000;
 }
 
 .side-panel.side-panel-hide{
-    transform: translateX(1000px);
+    transform: translateX(100%);
     // display: none;
 }

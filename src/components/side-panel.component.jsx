@@ -6,7 +6,9 @@ const SidePanel = () => {
 
     const handleLinkClick =()=>{document
         .querySelector(".side-panel")
-        .classList.toggle("side-panel-hide");}
+        .classList.toggle("side-panel-hide");
+      
+      document.querySelector('.hamburger-menu').classList.toggle('hamburger-menu-open')}
 
 
   return (
@@ -26,9 +28,9 @@ const SidePanel = () => {
           <span className="text-accent text-base mx-1">03. </span>Experience
         </li>
       </a>
-      <a href="#contact">
+      <a href="#projects">
         <li onClick={handleLinkClick} className="nav-link  text-content-200 text-xl py-4 flex flex-col items-center justify-center hover:text-accent-100 hover:cursor-pointer font-['Fira_Mono']">
-          <span className="text-accent text-base mx-1">04. </span>Contact
+          <span className="text-accent text-base mx-1">04. </span>Projects
         </li>
       </a>
       <li onClick={handleLinkClick} className="nav-link font-['Fira_Mono'] my-12">

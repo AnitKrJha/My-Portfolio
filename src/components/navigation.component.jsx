@@ -26,10 +26,10 @@ const Navigation = () => {
             <span className="text-accent text-md mx-1">03. </span>Experience
           </li>
         </a>
-        <a href="#contact">
+        <a href="#projects">
           {" "}
           <li className="nav-link  text-content-200 text-sm hover:text-accent-100 hover:cursor-pointer font-['Fira_Mono']">
-            <span className="text-accent text-md mx-1">04. </span>Abcd
+            <span className="text-accent text-md mx-1">04. </span>Projects
           </li>
         </a>
         <li className="nav-link font-['Fira_Mono']">
