@@ -3,7 +3,7 @@ import AccentHeading from "../components/accent-heading.component";
 import OtherProjectCard from "./project-card.component";
 const OtherProjectDirectory = () => {
   return (
-    <section className="project-directory " id="projects">
+    <section className="project-directory mt-20" id="projects">
       <h1 className="text-center font-bold text-3xl sm:text-3xl md:text-4xl text-content-100 pb-3">
         NoteWorthy Projects
       </h1>
