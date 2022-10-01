@@ -14,17 +14,21 @@ const Exprerience = () => {
     for (let tab of tabContent) {
       if (tab.dataset.index == index) {
         tab.classList.add("h-full");
+        tab.classList.add("opacity-100");
         tab.classList.remove("h-0");
+        tab.classList.remove("opacity-0");
       } else {
-        tab.classList.remove("h-full");
+        tab.classList.add("opacity-0");
         tab.classList.add("h-0");
+        tab.classList.remove("h-full")
+        tab.classList.remove("opacity-100");
       }
     }
   };
 
   return (
-    <div className="experience-container h-[70vh] pt-12 sm:px-16   bg-main ">
-      <section className="inner-experience max-w-2xl lg:max-w-3xl m-auto" id="experience">
+    <div className="experience-container pt-12 sm:px-16 h-[70vh]  bg-main " id="experience">
+      <section className="inner-experience max-w-2xl lg:max-w-3xl m-auto" >
         <LineHeading index={"02"}>
           {" "}
           <span className="min-w-fit text-2xl lg:text-3xl">
@@ -70,7 +74,7 @@ const Exprerience = () => {
               NSUT
             </button>
           </ul>
-          <div className="tab-contents">
+          <div className="tab-contents overflow-hidden h-full">
             <article
               className="h-full overflow-hidden tab-content "
               data-index="0"
