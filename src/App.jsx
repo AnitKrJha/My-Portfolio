@@ -11,7 +11,6 @@ function App() {
   let navbar;
   setTimeout(() => {
     navbar = document.querySelector(".navigation-container");
-    console.log(navbar);
     window.addEventListener("wheel", (e) => {
       if (e.wheelDeltaY <= 0) {
         navbar.style.transform = "translateY(-150px)";

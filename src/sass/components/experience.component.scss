@@ -45,3 +45,14 @@ button.active-btn{
     color: $accent;
     font-size: 1.25em;
   }
+
+  
+
+.experience-container-hide{
+    transform: translateX(-200px);
+    opacity: 0;
+    transition: all 2s ease-in-out;
+}
+.experience-container{
+    transition: all 1s ease-in-out;
+}

@@ -1,1 +1,7 @@
-// .featured-container
+.featured-projects-directory{
+    transition: all 1s ease;
+}
+.featured-projects-directory-hide{
+    transform:translateX(200px);
+    opacity: 0;
+}

@@ -1,13 +1,38 @@
 import "../sass/components/featured.styles.scss";
+import { useRef,useEffect } from "react";
 import { FiGithub } from "react-icons/fi";
 import { FiExternalLink } from "react-icons/fi";
 import AccentHeading from "../components/accent-heading.component";
 const FeaturedProject = ({ heading, tags, right, gitLink, externalLink }) => {
+
+
+
+
+  const featuredRef=useRef()
+
+  useEffect(() => {
+    console.log(featuredRef.current);
+
+    const Observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        console.log({ entry });
+        if (entry.isIntersecting) {
+          entry.target.classList.remove("featured-projects-directory-hide");
+        }
+      },
+      { threshold: 0.5 }
+    );
+
+    Observer.observe(featuredRef.current);
+  }, []);
+
+
   return (
-    <div className="featured-container w-full relative  grid grid-cols-12 gap-2 bg-transparent  ">
+    <div className="featured-container w-full relative featured-projects-directory-hide grid grid-cols-12 gap-2 bg-transparent  " ref={featuredRef}>
       <div className="featured-image flex items-center">
         <img
-          src="https://picsum.photos/800/500"
+          src={`https://picsum.photos/id/${Math.floor(Math.random()*1000)}/800/500`}
           alt=""
           className="overflow-hidden  feature-image"
         />
