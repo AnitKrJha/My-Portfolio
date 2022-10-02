@@ -3,7 +3,7 @@ import "../sass/components/about.styles.scss";
 const About = () => {
   return (
     <section className="about-me-container min-h-[75vh] py-16 "id="about">
-      <div className="inner-container lg:w-[65%] md:w-[75%] w-[90%] px-0 md:px-0 m-auto  flex flex-col md:flex-row md:gap-16 gap-10  items-center md:items-stretch md:justify-around">
+      <div className="inner-container lg:w-[85%] md:w-[100%] w-[100%] px-0 md:px-0 m-auto  flex flex-col md:flex-row md:gap-16 gap-10  items-center md:items-stretch md:justify-around">
         <div className="about-left max-w-lg  ">
           <LineHeading index={"01"}>
             <span className="min-w-max text-2xl lg:text-3xl">About Me</span>

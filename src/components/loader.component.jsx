@@ -6,6 +6,11 @@ const Loader = () => {
     document.querySelector(".load").classList.add("hide");
     setTimeout(() => {
       document.querySelector(".App").classList.remove("hide");
+      setTimeout(() => {
+        document
+          .querySelector(".navigation-container")
+          .classList.remove("nav-hide");
+      }, 500);
     }, 500);
   }, 2000);
 

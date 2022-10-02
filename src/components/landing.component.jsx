@@ -5,7 +5,7 @@ import AccentHeading from "./accent-heading.component";
 const Landing = () => {
   return (
     <div className="landing-container" id="home">
-    <section className="h-[93vh] max-w-7xl w-[90%] sm:w-[72%] lg:w-[60%] m-auto flex items-baseline justify-center flex-col gap-5 ">
+    <section className="h-[93vh] max-w-7xl w-[100%] sm:w-[92%] lg:w-[80%] m-auto flex items-baseline justify-center flex-col gap-5 ">
       <AccentHeading align={"left"}>Hi, I Am </AccentHeading>
       <h1 className="Name text-content-100 text-5xl sm:text-6xl font-bold md:text-6xl lg:text-7xl">
         <span className="styled-name">Anit</span> Jha
