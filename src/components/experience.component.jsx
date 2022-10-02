@@ -27,7 +27,7 @@ const Exprerience = () => {
   };
 
   return (
-    <div className="experience-container pt-12 sm:px-16 h-[60vh]  bg-main " id="experience">
+    <div className="experience-container pt-12 sm:px-16 h-[60vh]  bg-main -z-10" id="experience">
       <section className="inner-experience max-w-2xl lg:max-w-3xl m-auto" >
         <LineHeading index={"02"}>
           {" "}
@@ -36,7 +36,7 @@ const Exprerience = () => {
             Where I've Worked
           </span>
         </LineHeading>
-        <div className="inner flex text-content-300 gap-6 md:gap-12 mt-12 px-6">
+        <div className="inner flex text-content-300 gap-6 md:gap-12 mt-12 ">
           <ul className="tab-list w-fit flex flex-col gap-3 pt-5 md:justify-start">
             <button
               data-index="0"

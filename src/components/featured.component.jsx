@@ -4,12 +4,12 @@ import { FiExternalLink } from "react-icons/fi";
 import AccentHeading from "../components/accent-heading.component";
 const FeaturedProject = ({ heading, tags, right, gitLink, externalLink }) => {
   return (
-    <div className="featured-container w-full relative  grid grid-cols-12 gap-2 bg-transparent rounded-sm ">
+    <div className="featured-container w-full relative  grid grid-cols-12 gap-2 bg-transparent  ">
       <div className="featured-image flex items-center">
         <img
           src="https://picsum.photos/800/500"
           alt=""
-          className="overflow-hidden rounded-sm feature-image"
+          className="overflow-hidden  feature-image"
         />
       </div>
 
@@ -17,13 +17,13 @@ const FeaturedProject = ({ heading, tags, right, gitLink, externalLink }) => {
       <div
         className={`featured-content  text-content-300 flex flex-col items-center gap-6 md:gap-2 md:m-auto justify-center ${
           right ? "md:text-right" : "md:text-left"
-        } text-left px-2 py-4 rounded-md`}
+        } text-left px-2 py-4 `}
       >
         <AccentHeading>
           <span
             className={`${
               right ? "md:text-right" : "md:text-left"
-            } text-left block text-xs`}
+            } text-left block text-sm md:text-xs`}
           >
             Featured Project
           </span>

@@ -3,6 +3,9 @@
 .featured-container:not(:last-of-type){
     margin-bottom: 50px;
 }
+.featured-container:first-of-type{
+    margin-top: 50px;
+}
 
 .featured-container:nth-of-type(2n+1) .featured-content{
     grid-column: 7/-1;
@@ -55,7 +58,12 @@
 @media (max-width:768px) {
     .featured-content{
         backdrop-filter: brightness(1) ;
-        background-color: rgba($color: $main, $alpha: 0.8);
+        background-color: rgba($color: black, $alpha: 0.9);
+        color:$content;
+        .content{
+            background-color: rgba($color:$main , $alpha :0.3);
+            color:$content;
+        }
     }
 
     .featured-content:hover{
