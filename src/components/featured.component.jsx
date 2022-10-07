@@ -29,12 +29,12 @@ const FeaturedProject = ({ heading, tags, right, gitLink, externalLink }) => {
 
 
   return (
-    <div className="featured-container w-full relative featured-projects-directory-hide grid grid-cols-12 gap-2 bg-transparent  " ref={featuredRef}>
+    <div className="featured-container w-full relative featured-projects-directory-hide grid grid-cols-12 gap-2 bg-transparent  pointer-events-none" ref={featuredRef}>
       <div className="featured-image flex items-center">
         <img
           src={`https://picsum.photos/id/${Math.floor(Math.random()*1000)}/800/500`}
           alt=""
-          className="overflow-hidden  feature-image"
+          className="overflow-hidden  feature-image opacity-70 hover:opacity-95 transition duration-300"
         />
       </div>
 
@@ -42,7 +42,7 @@ const FeaturedProject = ({ heading, tags, right, gitLink, externalLink }) => {
       <div
         className={`featured-content  text-content-300 flex flex-col items-center gap-6 md:gap-2 md:m-auto justify-center ${
           right ? "md:text-right" : "md:text-left"
-        } text-left px-2 py-4 `}
+        } text-left px-2 py-4 pointer-events-auto`}
       >
         <AccentHeading>
           <span

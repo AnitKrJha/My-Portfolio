@@ -48,20 +48,20 @@ const Exprerience = () => {
 
   return (
     <div
-      className="experience-container experience-container-hide pt-12 sm:px-16 h-[60vh]  bg-main -z-10"
+      className="experience-container experience-container-hide pt-12 sm:px-16 h-[60vh] pointer-events-none"
       id="experience"
       ref={exRef}
     >
       <section className="inner-experience max-w-2xl lg:max-w-3xl m-auto">
         <LineHeading index={"02"}>
           {" "}
-          <span className="min-w-fit text-2xl lg:text-3xl">
+          <span className="min-w-fit text-2xl lg:text-3xl pointer-events-auto">
             {" "}
             Where I've Worked
           </span>
         </LineHeading>
-        <div className="inner flex text-content-300 gap-6 md:gap-12 mt-12 ">
-          <ul className="tab-list w-fit flex flex-col gap-3 pt-5 md:justify-start">
+        <div className="inner flex text-content-300 gap-6 md:gap-12 mt-12 pointer-events-none">
+          <ul className="tab-list w-fit flex flex-col gap-3 pt-5 md:justify-start pointer-events-auto">
             <button
               data-index="0"
               className="w-[85px] flex py-2.5 rounded-l-md rounded-r-xl hover:text-accent border-l-4 border-l-content-300 px-1  md:px-3 items-center   active-btn tab-btn"
@@ -98,7 +98,7 @@ const Exprerience = () => {
               NSUT
             </button>
           </ul>
-          <div className="tab-contents max-h-max">
+          <div className="tab-contents max-h-max pointer-events-auto">
             <article
               className="h-full overflow-hidden tab-content "
               data-index="0"

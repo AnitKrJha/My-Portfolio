@@ -8,11 +8,11 @@ const FeaturedProjects = () => {
 
   return (
     <section
-      className="featured-projects-directory max-w-[1000px] m-auto mt-20 "
+      className="featured-projects-directory max-w-[1000px] m-auto mt-20 pointer-events-none"
       id="projects" 
     >
       <LineHeading index={"03"}>
-        <span className="min-w-max text-2xl lg:text-3xl ">Some Projects</span>
+        <span className="min-w-max text-2xl lg:text-3xl pointer-events-auto">Some Projects</span>
       </LineHeading>
 
       <FeaturedProject

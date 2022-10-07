@@ -15,8 +15,12 @@ function App() {
   return (
     <div className="App hide relative md:px-[100px] px-[30px] overflow-x-hidden">
       <canvas
-        id="canvas1"
+        id="canvas2"
         className="fixed  bg-red w-[120vw] -left-[100px] h-screen -z-20 opacity-70"
+      ></canvas>
+      <canvas
+        id="canvas1"
+        className="fixed  bg-red w-[120vw] -left-[100px] h-screen -z-50 opacity-70"
       ></canvas>
       <SidePanel />
       <Landing />

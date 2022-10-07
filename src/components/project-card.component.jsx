@@ -3,7 +3,7 @@ import { FiExternalLink, FiGithub } from "react-icons/fi";
 import "../sass/components/project-card.styles.scss";
 const OtherProjectCard = ({ gitLink, externalLink, heading, tags }) => {
   return (
-    <div className="card-container flex flex-col w-full text-content-100 bg-main-700 py-8 px-6 gap-6 hover:-translate-y-2 transition-transform cursor-pointer ">
+    <div className="card-container flex flex-col w-full text-content-100 bg-main-700 py-8 px-6 gap-6 hover:-translate-y-2 transition-transform cursor-pointer pointer-events-auto">
       <div className="card-top flex gap-2">
         <BsFolder className="mr-auto text-accent  sm:text-4xl text-3xl font-extralightlight" />
         {gitLink && (
