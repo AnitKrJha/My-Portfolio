@@ -1,5 +1,6 @@
 import "../sass/components/landing.styles.scss";
 import Button from "./button.component";
+import NewButton from "./button-new.component";
 import LeftHandle from "./lefthandle.component";
 import AccentHeading from "./accent-heading.component";
 import { CreateRain } from "./../utils/matrix-rain";
@@ -30,7 +31,8 @@ const Landing = () => {
           consequatur!
         </p>
         <a href="#about" className="pointer-events-auto">
-          <Button>Check Out My Profile</Button>
+          {/* <Button>Check Out My Profile</Button> */}
+          <NewButton>Contact Me</NewButton>
         </a>
         
       </section>
