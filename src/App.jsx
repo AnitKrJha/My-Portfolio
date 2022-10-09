@@ -20,7 +20,7 @@ function App() {
       ></canvas>
       <canvas
         id="canvas1"
-        className="fixed  bg-red w-[120vw] -left-[100px] h-screen -z-50 opacity-70"
+        className="fixed  bg-red w-[120vw] -left-[100px] h-screen -z-[60] opacity-100"
       ></canvas>
       <SidePanel />
       <Landing />

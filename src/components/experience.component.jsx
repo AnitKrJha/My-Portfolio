@@ -5,12 +5,12 @@ const Exprerience = () => {
   const exRef = useRef();
 
   useEffect(() => {
-    console.log(exRef.current);
+    
 
     const Observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
-        console.log({ entry });
+       
        if(entry.isIntersecting){
         entry.target.classList.remove('experience-container-hide');
        }

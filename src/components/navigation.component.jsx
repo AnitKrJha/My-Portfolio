@@ -4,9 +4,9 @@ import Button from "./button.component";
 const Navigation = () => {
   return (
     <div
-      className="flex items-center justify-between px-4 py-3 navigation-container nav-hide text-primary bg-main text-3xl fixed top-0 w-full z-[1001]"
+      className="flex items-center justify-between px-4 py-3 navigation-container nav-hide text-primary bg-main bg-opacity-70 text-3xl fixed top-0 w-full z-[1001]"
       onScroll={(e) => {
-        console.log(e);
+        
       }}
     >
       <div className="logo text-accent flex items-center">Logo</div>

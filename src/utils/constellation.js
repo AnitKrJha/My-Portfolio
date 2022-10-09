@@ -1,145 +1,160 @@
-export const Constellation = ()=>{
-
-const canvas = document.getElementById("canvas2");
-const ctx = canvas.getContext("2d");
-const btn = document.querySelector("button");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-let hue = 0; //HSL(120 green ,240 blue and 0 red)
-console.log(ctx);
-
-window.addEventListener("resize", function () {
-  //evertime the window is resized there is distortion thus we are assinging the height and width of the cavas everytime we resize the window , also drawing the reactangle eveytime .
+export const Constellation = () => {
+  const canvas = document.getElementById("canvas2");
+  const ctx = canvas.getContext("2d");
+  const btn = document.querySelector("button");
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
-});
+  let hue = 0; //HSL(120 green ,240 blue and 0 red)
+  console.log(ctx);
 
-const mouse = {
-  X: null,
-  Y: null,
-};
+  window.addEventListener("resize", function () {
+    //evertime the window is resized there is distortion thus we are assinging the height and width of the cavas everytime we resize the window , also drawing the reactangle eveytime .
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
 
-function makecircle() {
-  ctx.fillStyle = "silver";
-  ctx.strokeStyle = "silver";
-  ctx.beginPath();
-  ctx.arc(mouse.X, mouse.Y, 5, 0, 6.28);
-  ctx.fill();
-}
-
-canvas.addEventListener("click", (e) => {
-  mouse.X = e.x;
-  mouse.Y = e.y;
-  for (let i = 0; i < 10; i++) particlesArray.push(new Particle()); //everytime i click i add a new particle
-});
-
-canvas.addEventListener("mousemove", (e) => {
-  mouse.X = e.x;
-  mouse.Y = e.y;
-  for (let i = 0; i < 2; i++) particlesArray.push(new Particle());
-});
-
-canvas.addEventListener("touchmove", (e) => {
-  mouse.X = e.x;
-  mouse.Y = e.y;
-  for (let i = 0; i < 2; i++) particlesArray.push(new Particle());
-});
-
-function randomColorGen() {
-  return `rgba(${Math.random() * 255},${Math.random() * 255},${
-    Math.random() * 255
-  },${Math.random()})`;
-}
-
-function distance(x, y) {
-  return Math.sqrt((x[0] - x[1]) ** 2 + (y[0] - y[1]) ** 2);
-}
-
-class Particle {
-  constructor() {
-    this.x = mouse.X;
-    this.y = mouse.Y;
-    // this.x = Math.random() * canvas.width;
-    // this.y = Math.random() * canvas.height;
-    this.size = Math.random() * 5 + 1;
-    this.speedX = Math.random() * 2 -1;
-    this.speedY = Math.random() * 2 - 1;
-    this.color = "hsl(" + 160 + ((hue + 1) % 40) + ",100%,50%)";
-    // this.color = randomColorGen();
-  }
-
-  //methods
-
-  update() {
-    if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
-    if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
-    this.x += this.speedX;
-    this.y += this.speedY;
-    if (this.size > 0.4) this.size -= 0.1;
-
-    if (this.size < 0.4) {
-      particlesArray.splice(particlesArray.indexOf(this), 1);
-    }
-
-    // this.color='hsl('+hue+',100%,50%)'
-  }
-
-  draw() {
-    ctx.fillStyle = this.color;
-    ctx.strokeStyle = this.color;
+  const mouse = {
+    X: null,
+    Y: null,
+  };
+  let showText = true;
+  function makecircle() {
+    ctx.fillStyle = "silver";
+    ctx.strokeStyle = "silver";
     ctx.beginPath();
-    ctx.arc(this.x, this.y, this.size, 0, 6.28);
+    ctx.arc(mouse.X, mouse.Y, 5, 0, 6.28);
     ctx.fill();
   }
 
-  drawline() {
-    ctx.strokeStyle = this.color;
-    for (let par of particlesArray) {
-      if (distance([par.x, this.x], [par.y, this.y]) < 50) {
-        ctx.beginPath();
-        ctx.moveTo(par.x, par.y);
-        ctx.lineTo(this.x, this.y);
-        ctx.stroke();
+  canvas.addEventListener("click", (e) => {
+    mouse.X = e.x;
+    mouse.Y = e.y;
+    for (let i = 0; i < 10; i++) particlesArray.push(new Particle()); //everytime i click i add a new particle
+  });
+
+  canvas.addEventListener("mousemove", (e) => {
+    if (showText) {
+      setTimeout(() => {
+        showText = false;
+      }, 1000);
+    }
+    mouse.X = e.x;
+    mouse.Y = e.y;
+    for (let i = 0; i < 2; i++) particlesArray.push(new Particle());
+  });
+
+  canvas.addEventListener("touchmove", (e) => {
+    mouse.X = e.x;
+    mouse.Y = e.y;
+    for (let i = 0; i < 2; i++) particlesArray.push(new Particle());
+  });
+
+  window.addEventListener("scroll", (e) => {
+    if (window.innerWidth < 600) mouse.X = 0.9 * window.innerWidth;
+    else {
+      mouse.X = (17 * window.innerWidth) / 20;
+    }
+    mouse.Y = Math.random() * window.innerHeight + 100;
+    for (let i = 0; i < 2; i++) particlesArray.push(new Particle());
+  });
+
+  
+
+  function randomColorGen() {
+    return `rgba(${Math.random() * 255},${Math.random() * 255},${
+      Math.random() * 255
+    },${Math.random()})`;
+  }
+
+  function distance(x, y) {
+    return Math.sqrt((x[0] - x[1]) ** 2 + (y[0] - y[1]) ** 2);
+  }
+
+  class Particle {
+    constructor() {
+      this.x = mouse.X;
+      this.y = mouse.Y;
+      // this.x = Math.random() * canvas.width;
+      // this.y = Math.random() * canvas.height;
+      this.size = Math.random() * 5 + 1;
+      this.speedX = Math.random() * 2 - 1;
+      this.speedY = Math.random() * 2 - 1;
+      this.color = "hsl(" + 160 + ((hue + 1) % 40) + ",100%,50%)";
+      // this.color = randomColorGen();
+    }
+
+    //methods
+
+    update() {
+      if (this.x > canvas.width || this.x < 0) this.speedX *= -1;
+      if (this.y > canvas.height || this.y < 0) this.speedY *= -1;
+      this.x += this.speedX;
+      this.y += this.speedY;
+      if (this.size > 0.4) this.size -= 0.1;
+
+      if (this.size < 0.4) {
+        particlesArray.splice(particlesArray.indexOf(this), 1);
+      }
+
+      // this.color='hsl('+hue+',100%,50%)'
+    }
+
+    draw() {
+      ctx.fillStyle = this.color;
+      ctx.strokeStyle = this.color;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, 6.28);
+      ctx.fill();
+    }
+
+    drawline() {
+      ctx.strokeStyle = this.color;
+      for (let par of particlesArray) {
+        if (distance([par.x, this.x], [par.y, this.y]) < 50) {
+          ctx.beginPath();
+          ctx.moveTo(par.x, par.y);
+          ctx.lineTo(this.x, this.y);
+          ctx.stroke();
+        }
       }
     }
   }
-}
 
-const particlesArray = [];
+  const particlesArray = [];
 
-// function seeding() {
-//   for (let i = 0; i < 10; i++) {
-//     particlesArray.push(new Particle());
-//   }
-// }
+  // function seeding() {
+  //   for (let i = 0; i < 10; i++) {
+  //     particlesArray.push(new Particle());
+  //   }
+  // }
 
-// seeding();
+  // seeding();
 
-function handleParticles() {
-  for (let particle of particlesArray) {
-    ctx.lineWidth = 0.2;
+  function handleParticles() {
+    for (let particle of particlesArray) {
+      ctx.lineWidth = 0.2;
 
-    particle.draw();
-    particle.drawline();
-    particle.update();
+      particle.draw();
+      particle.drawline();
+      particle.update();
+    }
   }
-}
 
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
+  function sleep(ms) {
+    return new Promise((resolve) => setTimeout(resolve, ms));
+  }
 
-async function animate() {
-  // p.update();
-  //   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  async function animate() {
+    // p.update();
+    //   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  ctx.fillStyle = `rgb(10, 25, 47,0.1)`;
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  handleParticles();
-  hue++;
+    ctx.fillStyle = `rgb(10, 25, 47,0.1)`;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    handleParticles();
+    hue++;
 
-  requestAnimationFrame(animate);
-}
+    requestAnimationFrame(animate);
+  }
 
-animate();
-}
+  animate();
+};

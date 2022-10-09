@@ -68,7 +68,7 @@ export const CreateRain = () => {
   const effect = new Effect(canvas.width, canvas.height);
 
   let lastTime = 0;
-  const fps = 15;
+  const fps = 25;
   const nextFrame = 1000 / fps;
   let timer = 0;
 

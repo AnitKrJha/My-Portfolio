@@ -11,12 +11,12 @@ const FeaturedProject = ({ heading, tags, right, gitLink, externalLink }) => {
   const featuredRef=useRef()
 
   useEffect(() => {
-    console.log(featuredRef.current);
+    
 
     const Observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
-        console.log({ entry });
+        
         if (entry.isIntersecting) {
           entry.target.classList.remove("featured-projects-directory-hide");
         }
