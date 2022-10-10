@@ -67,7 +67,7 @@ const Exprerience = () => {
               return (
                 <button
                   data-index={`${index}`}
-                  className={`w-[85px] flex py-2.5 rounded-l-md rounded-r-xl hover:text-accent border-l-4 border-l-content-300 px-1  md:px-1 items-center   tab-btn `}
+                  className={`w-[85px] flex py-2.5 rounded-l-md rounded-r-xl hover:text-accent border-l-4 border-l-content-300 px-1  md:px-1 items-center ${index===0?'active-btn':''}   tab-btn `}
                   onClick={handleOnClick}
                   key={uniqueId()}
                 >
