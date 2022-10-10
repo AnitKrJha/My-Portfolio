@@ -1,7 +1,7 @@
 import { BsFolder } from "react-icons/bs";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 import "../sass/components/project-card.styles.scss";
-const OtherProjectCard = ({ gitLink, externalLink, heading, tags }) => {
+const OtherProjectCard = ({ gitLink, externalLink, heading, tags ,desc}) => {
   return (
     <div className="card-container flex flex-col w-full text-content-100 bg-main-700 py-8 px-6 gap-6 hover:-translate-y-2 transition-transform cursor-pointer pointer-events-auto">
       <div className="card-top flex gap-2">
@@ -22,15 +22,17 @@ const OtherProjectCard = ({ gitLink, externalLink, heading, tags }) => {
           {heading}
         </h2>
         <p className="project-desc text-base">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere,
-          saepe.
+         {desc}
         </p>
       </div>
       <div className="card-foot">
         <ul className="project-tags text-content-300 flex gap-4 font-['Fira_Mono'] text-sm capitalize  transition-colors">
           {tags.map((tag) => {
             return (
-              <li className="hover:text-accent hover:scale-105 transition-all" key={tag}>
+              <li
+                className="hover:text-accent hover:scale-105 transition-all"
+                key={tag}
+              >
                 {tag}
               </li>
             );

@@ -1,19 +1,19 @@
 import LineHeading from "./line-heading.component";
 import { useEffect, useRef } from "react";
+import uniqueId from "../utils/uniquekey";
+import { ExperienceData } from "../utils/expereince-data";
 import "../sass/components/experience.component.scss";
 const Exprerience = () => {
   const exRef = useRef();
 
   useEffect(() => {
-    
-
     const Observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
-       
-       if(entry.isIntersecting){
-        entry.target.classList.remove('experience-container-hide');
-       }
+
+        if (entry.isIntersecting) {
+          entry.target.classList.remove("experience-container-hide");
+        }
       },
       { threshold: 0.5 }
     );
@@ -62,256 +62,55 @@ const Exprerience = () => {
         </LineHeading>
         <div className="inner flex text-content-300 gap-6 md:gap-12 mt-12 pointer-events-none">
           <ul className="tab-list w-fit flex flex-col gap-3 pt-5 md:justify-start pointer-events-auto">
-            <button
-              data-index="0"
-              className="w-[85px] flex py-2.5 rounded-l-md rounded-r-xl hover:text-accent border-l-4 border-l-content-300 px-1  md:px-3 items-center   active-btn tab-btn"
-              onClick={handleOnClick}
-            >
-              Amazon
-            </button>
-            <button
-              data-index="1"
-              className="w-[85px] flex py-2.5 rounded-l-md rounded-r-xl hover:text-accent border-l-4 border-l-content-300 px-1  md:px-3 items-center    tab-btn"
-              onClick={handleOnClick}
-            >
-              Google
-            </button>
-            <button
-              data-index="2"
-              className="w-[85px] flex py-2.5 rounded-l-md rounded-r-xl hover:text-accent border-l-4 border-l-content-300 px-1  md:px-3 items-center    tab-btn"
-              onClick={handleOnClick}
-            >
-              Microsoft
-            </button>
-            <button
-              data-index="3"
-              className="w-[85px] flex py-2.5 rounded-l-md rounded-r-xl hover:text-accent border-l-4 border-l-content-300 px-1  md:px-3 items-center    tab-btn"
-              onClick={handleOnClick}
-            >
-              xLance
-            </button>
-            <button
-              data-index="4"
-              className="w-[85px] flex py-2.5 rounded-l-md rounded-r-xl hover:text-accent border-l-4 border-l-content-300 px-1  md:px-3 items-center    tab-btn"
-              onClick={handleOnClick}
-            >
-              NSUT
-            </button>
+            {ExperienceData.map((data) => {
+              let index=ExperienceData.indexOf(data);
+              return (
+                <button
+                  data-index={`${index}`}
+                  className={`w-[85px] flex py-2.5 rounded-l-md rounded-r-xl hover:text-accent border-l-4 border-l-content-300 px-1  md:px-1 items-center ${index===0?'active-btn':''}  tab-btn `}
+                  onClick={handleOnClick}
+                  key={uniqueId()}
+                >
+                  {data.company}
+                </button>
+              );
+            })}
           </ul>
+
           <div className="tab-contents max-h-max pointer-events-auto">
-            <article
-              className="h-full overflow-hidden tab-content "
-              data-index="0"
-            >
-              <h1 className="role font-bold text-lg md:text-xl ">
-                Software Engineer{" "}
-                <span className="text-accent text-base sm:text-lg">
-                  @Amazon
-                </span>
-              </h1>
-              <p className="tenure font-['Fira_Sans'] text-sm py-1">
-                2 October - 3 October
-              </p>
-              <ul className="work-points text-sm sm:text-base">
-                <li
-                  className="work-point max-w-lg max-h-16 overflow-clip"
-                  data-icon="▹"
+            {ExperienceData.map((data) => {
+              const { desc } = data;
+              return (
+                <article
+                  className="h-full overflow-hidden tab-content "
+                  data-index={`${ExperienceData.indexOf(data)}`}
+                  key={uniqueId()}
                 >
-                  <span>
-                    {" "}
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Similique, ipsam! Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Temporibus, nihil?
-                  </span>
-                </li>
-                <li className="work-point max-w-lg " data-icon="▹">
-                  <span>
-                    {" "}
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Similique, ipsam! Lorem, ipsum dolor sit amet consectetur
-                    adipisicing elit. Necessitatibus, unde.
-                  </span>
-                </li>
-                <li className="work-point max-w-lg " data-icon="▹">
-                  <span>
-                    {" "}
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Similique, ipsam! Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit. Incidunt, ab.
-                  </span>
-                </li>
-              </ul>
-            </article>
-            <article
-              className="h-0 overflow-hidden tab-content "
-              data-index="1"
-            >
-              <h1 className="role font-bold text-lg md:text-xl">
-                Software Engineer{" "}
-                <span className="text-accent text-base sm:text-lg">
-                  @Google
-                </span>
-              </h1>
-              <p className="tenure font-['Fira_Sans'] text-sm py-1">
-                2 October - 3 October
-              </p>
-              <ul className="work-points text-sm sm:text-base">
-                <li
-                  className="work-point max-w-lg max-h-16 overflow-clip"
-                  data-icon="▹"
-                >
-                  <span>
-                    {" "}
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Similique, ipsam! Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Temporibus, nihil?
-                  </span>
-                </li>
-                <li className="work-point max-w-lg " data-icon="▹">
-                  <span>
-                    {" "}
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Similique, ipsam! Lorem, ipsum dolor sit amet consectetur
-                    adipisicing elit. Necessitatibus, unde.
-                  </span>
-                </li>
-                <li className="work-point max-w-lg " data-icon="▹">
-                  <span>
-                    {" "}
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Similique, ipsam! Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit. Incidunt, ab.
-                  </span>
-                </li>
-              </ul>
-            </article>
-            <article
-              className="h-0 overflow-hidden tab-content "
-              data-index="2"
-            >
-              <h1 className="role font-bold text-lg md:text-xl ">
-                Data Analyst{" "}
-                <span className="text-accent text-base sm:text-lg">
-                  @Microsoft
-                </span>
-              </h1>
-              <p className="tenure font-['Fira_Sans'] text-sm py-1">
-                2 October - 3 October
-              </p>
-              <ul className="work-points text-sm sm:text-base">
-                <li
-                  className="work-point max-w-lg max-h-16 overflow-clip"
-                  data-icon="▹"
-                >
-                  <span>
-                    {" "}
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Similique, ipsam! Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Temporibus, nihil?
-                  </span>
-                </li>
-                <li className="work-point max-w-lg " data-icon="▹">
-                  <span>
-                    {" "}
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Similique, ipsam! Lorem, ipsum dolor sit amet consectetur
-                    adipisicing elit. Necessitatibus, unde.
-                  </span>
-                </li>
-                <li className="work-point max-w-lg " data-icon="▹">
-                  <span>
-                    {" "}
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Similique, ipsam! Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit. Incidunt, ab.
-                  </span>
-                </li>
-              </ul>
-            </article>
-            <article
-              className="h-0 overflow-hidden tab-content "
-              data-index="3"
-            >
-              <h1 className="role font-bold text-lg md:text-xl ">
-                Intern{" "}
-                <span className="text-accent text-base sm:text-lg">
-                  @xLance
-                </span>
-              </h1>
-              <p className="tenure font-['Fira_Sans'] text-sm py-1">
-                2 October - 3 October
-              </p>
-              <ul className="work-points text-sm sm:text-base">
-                <li
-                  className="work-point max-w-lg max-h-16 overflow-clip"
-                  data-icon="▹"
-                >
-                  <span>
-                    {" "}
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Similique, ipsam! Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Temporibus, nihil?
-                  </span>
-                </li>
-                <li className="work-point max-w-lg " data-icon="▹">
-                  <span>
-                    {" "}
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Similique, ipsam! Lorem, ipsum dolor sit amet consectetur
-                    adipisicing elit. Necessitatibus, unde.
-                  </span>
-                </li>
-                <li className="work-point max-w-lg " data-icon="▹">
-                  <span>
-                    {" "}
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Similique, ipsam! Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit. Incidunt, ab.
-                  </span>
-                </li>
-              </ul>
-            </article>
-            <article
-              className="h-0 overflow-hidden tab-content "
-              data-index="4"
-            >
-              <h1 className="role font-bold text-lg md:text-xl ">
-                Instructor{" "}
-                <span className="text-accent text-base sm:text-lg">@NSUT</span>
-              </h1>
-              <p className="tenure font-['Fira_Sans'] text-sm py-1">
-                2 October - 3 October
-              </p>
-              <ul className="work-points text-sm sm:text-base">
-                <li
-                  className="work-point max-w-lg max-h-16 overflow-clip"
-                  data-icon="▹"
-                >
-                  <span>
-                    {" "}
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Similique, ipsam! Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Temporibus, nihil?
-                  </span>
-                </li>
-                <li className="work-point max-w-lg " data-icon="▹">
-                  <span>
-                    {" "}
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Similique, ipsam! Lorem, ipsum dolor sit amet consectetur
-                    adipisicing elit. Necessitatibus, unde.
-                  </span>
-                </li>
-                <li className="work-point max-w-lg " data-icon="▹">
-                  <span>
-                    {" "}
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Similique, ipsam! Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit. Incidunt, ab.
-                  </span>
-                </li>
-              </ul>
-            </article>
+                  <h1 className="role font-bold text-lg md:text-xl ">
+                    {desc.jobTitle+" "} 
+                    <span className="text-accent text-base sm:text-lg">
+                       @{data.company}
+                    </span>
+                  </h1>
+                  <p className="tenure font-['Fira_Sans'] text-sm py-1">
+                    {desc.startDate} - {desc.endDate ? desc.endDate : "present"}
+                  </p>
+                  <ul className="work-points text-sm sm:text-base">
+                    {desc.Points.map((point) => {
+                      return (
+                        <li
+                          className="work-point max-w-lg max-h-16 overflow-clip"
+                          data-icon="▹"
+                          key={uniqueId()}
+                        >
+                          <span>{point}</span>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>

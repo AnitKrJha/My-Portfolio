@@ -2,7 +2,7 @@ import "../sass/components/button-new.styles.scss";
 
 const NewButton = ({children}) => {
   return (
-    <button class="btn">
+    <button className="btn">
       <span>{children}</span>
     </button>
   );

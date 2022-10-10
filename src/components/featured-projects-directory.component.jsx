@@ -1,59 +1,34 @@
 import FeaturedProject from "./featured.component";
-import { useRef,useEffect } from "react";
+import { FeaturedProjectsData } from "../utils/featured-project-data";
+import uniqueId from '../utils/uniquekey'
 import LineHeading from "../components/line-heading.component";
-import '../sass/components/featured-projects.styles.scss'
+import "../sass/components/featured-projects.styles.scss";
 const FeaturedProjects = () => {
-
-    
-
   return (
     <section
       className="featured-projects-directory max-w-[1000px] m-auto mt-20 pointer-events-none"
-      id="projects" 
+      id="projects"
     >
       <LineHeading index={"03"}>
-        <span className="min-w-max text-2xl lg:text-3xl pointer-events-auto">Some Projects</span>
+        <span className="min-w-max text-2xl lg:text-3xl pointer-events-auto">
+          Some Projects
+        </span>
       </LineHeading>
 
-      <FeaturedProject
-        heading={"Best Project Ever"}
-        tags={["ExpressJs", "NodeJs", "HTML"]}
-        gitLink={"a"}
-        externalLink={"b"}
-        right
-      />
-      <FeaturedProject
-        heading={"Best Project Ever"}
-        tags={["ExpressJs", "NodeJs", "HTML"]}
-        gitLink={"a"}
-        externalLink={"b"}
-      />
-      <FeaturedProject
-        heading={"Best Project Ever"}
-        tags={["ExpressJs", "NodeJs", "HTML"]}
-        gitLink={"a"}
-        externalLink={"b"}
-        right
-      />
-      <FeaturedProject
-        heading={"Best Project Ever"}
-        tags={["ExpressJs", "NodeJs", "HTML"]}
-        gitLink={"a"}
-        externalLink={"b"}
-      />
-      <FeaturedProject
-        heading={"Best Project Ever"}
-        tags={["ExpressJs", "NodeJs", "HTML"]}
-        gitLink={"a"}
-        externalLink={"b"}
-        right
-      />
-      <FeaturedProject
-        heading={"Best Project Ever"}
-        tags={["ExpressJs", "NodeJs", "HTML"]}
-        gitLink={"a"}
-        externalLink={"b"}
-      />
+      {FeaturedProjectsData.map((project) => {
+        return (
+          <FeaturedProject
+            heading={project.title}
+            tags={project.tags}
+            gitLink={project.gitLink}
+            externalLink={project.externalLink}
+            imgURL={project.imgURL}
+            key={uniqueId()}
+            desc={project.desc}
+            right={FeaturedProjectsData.indexOf(project)%2===0}
+          />
+        );
+      })}
     </section>
   );
 };
