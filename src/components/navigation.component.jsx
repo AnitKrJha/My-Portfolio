@@ -1,6 +1,7 @@
 import "../sass/components/navigation.styles.scss";
 import Button from "./button.component";
 
+
 const Navigation = () => {
   return (
     <div

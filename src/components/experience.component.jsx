@@ -62,12 +62,12 @@ const Exprerience = () => {
         </LineHeading>
         <div className="inner flex text-content-300 gap-6 md:gap-12 mt-12 pointer-events-none">
           <ul className="tab-list w-fit flex flex-col gap-3 pt-5 md:justify-start pointer-events-auto">
-            {ExperienceData.map((data) => {
-              let index=ExperienceData.indexOf(data);
+            {ExperienceData.map((data,index) => {
+             
               return (
                 <button
                   data-index={`${index}`}
-                  className={`w-[85px] flex py-2.5 rounded-l-md rounded-r-xl hover:text-accent border-l-4 border-l-content-300 px-1  md:px-1 items-center ${index===0?'active-btn':''}  tab-btn `}
+                  className={`w-[85px] flex py-2.5 rounded-l-md rounded-r-xl hover:text-accent border-l-4 border-l-content-300 px-1  md:px-1 items-center   tab-btn `}
                   onClick={handleOnClick}
                   key={uniqueId()}
                 >
@@ -78,12 +78,12 @@ const Exprerience = () => {
           </ul>
 
           <div className="tab-contents max-h-max pointer-events-auto">
-            {ExperienceData.map((data) => {
+            {ExperienceData.map((data,index) => {
               const { desc } = data;
               return (
                 <article
-                  className="h-full overflow-hidden tab-content "
-                  data-index={`${ExperienceData.indexOf(data)}`}
+                  className={`${index===0?'h-full':'h-0'} overflow-hidden tab-content `}
+                  data-index={`${index}`}
                   key={uniqueId()}
                 >
                   <h1 className="role font-bold text-lg md:text-xl ">
