@@ -2,6 +2,7 @@ import "../sass/components/featured.styles.scss";
 import { useRef, useEffect } from "react";
 import { FiGithub } from "react-icons/fi";
 import { FiExternalLink } from "react-icons/fi";
+import gsap from "gsap";
 import AccentHeading from "../components/accent-heading.component";
 const FeaturedProject = ({
   heading,
@@ -20,7 +21,7 @@ const FeaturedProject = ({
         const entry = entries[0];
 
         if (entry.isIntersecting) {
-          entry.target.classList.remove("featured-projects-directory-hide");
+          gsap.to(entry.target,{x:0, opacity:1, duration:1,ease:'bounce.out'})
         }
       },
       { threshold: 0.5 }
@@ -31,7 +32,7 @@ const FeaturedProject = ({
 
   return (
     <div
-      className="featured-container w-full relative featured-projects-directory-hide grid grid-cols-12 gap-2 bg-transparent  pointer-events-none"
+      className="featured-container w-full relative translate-x-[50vw] opacity-0 grid grid-cols-12 gap-2 bg-transparent  pointer-events-none"
       ref={featuredRef}
     >
       <div className="featured-image flex items-center">
