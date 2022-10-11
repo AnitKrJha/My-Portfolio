@@ -24,7 +24,7 @@ const FeaturedProject = ({
           gsap.to(entry.target,{x:0, opacity:1, duration:1,ease:'bounce.out'})
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.2 }
     );
 
     Observer.observe(featuredRef.current);
@@ -32,7 +32,7 @@ const FeaturedProject = ({
 
   return (
     <div
-      className="featured-container w-full relative translate-x-[50vw] opacity-0 grid grid-cols-12 gap-2 bg-transparent  pointer-events-none"
+      className="featured-container w-full relative translate-x-[200px] opacity-0 grid grid-cols-12 gap-2 bg-transparent  pointer-events-none"
       ref={featuredRef}
     >
       <div className="featured-image flex items-center">

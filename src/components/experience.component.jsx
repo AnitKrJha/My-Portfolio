@@ -15,7 +15,7 @@ const Exprerience = () => {
           entry.target.classList.remove("experience-container-hide");
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.2 }
     );
 
     Observer.observe(exRef.current);
