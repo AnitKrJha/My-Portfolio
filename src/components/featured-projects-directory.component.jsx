@@ -1,5 +1,5 @@
 import FeaturedProject from "./featured.component";
-import { FeaturedProjectsData } from "../utils/data/featured-project-data";
+import { FeaturedProjectsData } from "./../utils/Data/featured-project-data";
 import uniqueId from '../utils/uniquekey'
 import LineHeading from "../components/line-heading.component";
 import "../sass/components/featured-projects.styles.scss";
