@@ -1,24 +1,45 @@
 @import "../abstract/variables";
-
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Monoton&display=swap');
 @font-face {
     font-family: 'Rocher';
     src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
   }
 
-.styled-name {
-  font-family: "Rocher", cursive;
-  font-palette: --Grays;
-  display: inline-block;
-  font-size: 120px;
-  letter-spacing: 10px;
-  transform: rotateZ(1deg);
+// .styled-name {
+//   font-family: "Rocher", cursive;
+//   font-palette: --Grays;
+//   display: inline-block;
+//   font-size: 120px;
+//   letter-spacing: 10px;
+//   transform: rotateZ(1deg);
+// }
+
+// @font-palette-values --Grays {
+//   font-family: 'Rocher';
+//   base-palette: 6;
+//   override-colors:
+//     0 $accent,
+// }
+
+@keyframes background{
+ from{
+  background-position: 0%;
+ }
+ to{
+  background-position: -200%;
+ }
 }
 
-@font-palette-values --Grays {
-  font-family: 'Rocher';
-  base-palette: 6;
-  override-colors:
-    0 $accent,
+
+.styled-name{
+  background-image: linear-gradient(to right, rgb(19 241 80), rgb(58 226 253), rgb(19 241 80));  background-size: 200%;
+  color: transparent;
+  font-size: 150px;
+  font-family: 'Lobster',cursive;
+  font-weight: bolder;
+  animation: background 3s linear infinite;
+  -webkit-background-clip: text;
+  
 }
 
 #canvas1{

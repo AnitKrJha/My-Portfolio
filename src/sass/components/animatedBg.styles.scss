@@ -43,11 +43,23 @@ body {
       left: 0;
       width: 100%;
       height: 100%;
-      background:rgba($color: $accent, $alpha: 0.3);
+      background: radial-gradient(farthest-corner at top, #FFFFFF 0%, #b3f0ff 4%, #33e0ff 12.25%, #10959e 31.25%, #015e55 50%) top right/200% 200%;
       border-radius: inherit;
-      animation: var(--bubble-sway-type) var(--bubble-sway-duration) var(--bubble-sway-delay) ease-in-out alternate infinite;
+      animation: var(--bubble-sway-type) var(--bubble-sway-duration) var(--bubble-sway-delay) ease-in-out alternate infinite , colorChange 3s infinite alternate;
+
+      background-size: 200%;
     }
-  
+
+    
+
+    @keyframes colorChange {
+
+      to {
+        background-position:top left;
+      }
+    }
+     
+
     @for $i from 0 through $bubble-count {
       &:nth-child(#{$i}) {
         --bubble-left-offset: #{random_range(0vw, 100vw)};
