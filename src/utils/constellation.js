@@ -49,14 +49,6 @@ export const Constellation = () => {
     for (let i = 0; i < 2; i++) particlesArray.push(new Particle());
   });
 
-  window.addEventListener("scroll", (e) => {
-    if (window.innerWidth < 600) mouse.X = 0.9 * window.innerWidth;
-    else {
-      mouse.X = (17 * window.innerWidth) / 20;
-    }
-    mouse.Y = Math.random() * window.innerHeight + 100;
-    for (let i = 0; i < 2; i++) particlesArray.push(new Particle());
-  });
 
   
 
