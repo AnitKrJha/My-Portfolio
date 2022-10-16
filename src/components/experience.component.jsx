@@ -1,7 +1,7 @@
 import LineHeading from "./line-heading.component";
 import { useEffect, useRef } from "react";
 import uniqueId from "../utils/uniquekey";
-import { ExperienceData } from "../utils/expereince-data";
+import { ExperienceData } from "../utils/data/expereince-data";
 import "../sass/components/experience.component.scss";
 const Exprerience = () => {
   const exRef = useRef();

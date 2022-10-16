@@ -1,6 +1,6 @@
 import "../sass/components/project-card-directory.styles.scss";
 import AccentHeading from "../components/accent-heading.component";
-import { OtherProjectsData } from "../utils/other-project-data";
+import { OtherProjectsData } from "../utils/data/other-project-data";
 import uniqueId from "../utils/uniquekey";
 import OtherProjectCard from "./project-card.component";
 const OtherProjectDirectory = () => {

@@ -1,4 +1,5 @@
 import "../sass/components/landing.styles.scss";
+import '../sass/components/animatedBg.styles.scss'
 import gsap from "gsap";
 import NewButton from "./button-new.component";
 import LeftHandle from "./lefthandle.component";
@@ -19,7 +20,7 @@ const Landing = () => {
       
     },containerRef)
 
-    CreateRain();
+    // CreateRain();
     Constellation();
 
     return ()=>ctx.revert()
