@@ -21,7 +21,7 @@ const Landing = () => {
     },containerRef)
 
     // CreateRain();
-    Constellation();
+    //Constellation();
 
     return ()=>ctx.revert()
   }, []);
