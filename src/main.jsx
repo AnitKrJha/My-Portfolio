@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import SidePanel from './components/side-panel.component'
 import Navigation from './components/navigation.component'
-import AnimatedBg from './components/animatedBg.component'
+
 import './index.scss'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -11,6 +11,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Navigation/>
     <App />
     <SidePanel/>
-     <AnimatedBg/> 
   </>
 )

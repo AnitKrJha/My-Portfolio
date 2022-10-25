@@ -4,8 +4,7 @@ import gsap from "gsap";
 import NewButton from "./button-new.component";
 import LeftHandle from "./lefthandle.component";
 import AccentHeading from "./accent-heading.component";
-import { CreateRain } from "./../utils/matrix-rain";
-import { Constellation } from "../utils/constellation";
+
 import { useEffect, useRef } from "react";
 const Landing = () => {
 
